@@ -88,7 +88,7 @@
     "ControllerAdviceConfig.java, handlerExceptionCustom.jsp, HandlerExceptionCustom.java"
     위 파일들을 참고하세요.
 
-# Spring Framework Validator
+# Spring Framework Form Validator
 
     1. <form:form> 구성
         Spring Framework 의 <form:form> 태그를 사용해서 form UI를 구성합니다.
@@ -106,3 +106,39 @@
     4. Controller 와 Validator 연결
         유효성 검증을 위해 생성한 "Validator 객체" 와 "Controller 객체"를 서로 연결 합니다.
         "ValidatorController.java" 파일을 참고하세요.
+
+# Java Validator
+
+    JSR-303은 자바 빈에 어노테이션을 붙여 검증하는 방법을 표준화한 명세입니다.
+
+    @Valid (JSR-303, Bean Validation) 빈 검증시에는 의존성 추가가 필요합니다.
+    <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>8.0.1.Final</version>
+    </dependency>
+
+# 엑셀
+
+    <!-- Apache POI -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+
+# PDF
+
+    <!-- Apache iText -->
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>itextpdf</artifactId>
+        <version>5.5.13.3</version>
+    </dependency>
+
+    

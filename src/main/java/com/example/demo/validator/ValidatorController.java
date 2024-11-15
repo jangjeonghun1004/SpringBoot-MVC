@@ -1,5 +1,6 @@
 package com.example.demo.validator;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,25 +17,25 @@ import java.util.List;
 @RequestMapping("/validator")
 @SessionAttributes("validatorModel")
 public class ValidatorController {
-    private final CheckValidator checkValidator;
+    //private final CheckValidator checkValidator;
 
     /**
      * 유효성 검증기을 위한 객체의 인스턴스를 생성합니다.
      * @param checkValidator 유효성 검증 객체
      */
-    @Autowired
-    public ValidatorController(CheckValidator checkValidator) {
-        this.checkValidator = checkValidator;
-    }
+//    @Autowired
+//    public ValidatorController(CheckValidator checkValidator) {
+//        //this.checkValidator = checkValidator;
+//    }
 
     /**
      * 휴효성 검증기를 등록합니다.
      * @param webDataBinder WebDataBinder 객체
      */
-    @InitBinder
-    public void initBinder(WebDataBinder webDataBinder) {
-        webDataBinder.setValidator(this.checkValidator);
-    }
+//    @InitBinder
+//    public void initBinder(WebDataBinder webDataBinder) {
+//        webDataBinder.setValidator(this.checkValidator);
+//    }
 
     /**
      * 선택 박스 구성을 위한 정보를 설정합니다.
@@ -70,7 +71,8 @@ public class ValidatorController {
      */
     @PostMapping
     public ModelAndView validatorPost(
-            @ModelAttribute("validatorModel") @Validated ValidatorModel validatorModel,
+            @ModelAttribute("validatorModel") @Valid ValidatorModel validatorModel,
+            //@ModelAttribute("validatorModel") @Validated ValidatorModel validatorModel, @Validated 사용시 checkValidator 필요합니다.
             BindingResult bindingResult,
             SessionStatus sessionStatus
     ) {
